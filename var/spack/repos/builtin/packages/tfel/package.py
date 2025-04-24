@@ -232,6 +232,7 @@ class Tfel(CMakePackage):
 
     def setup_run_environment(self, env: EnvironmentModifications) -> None:
         env.append_path("LD_LIBRARY_PATH", self.prefix.lib)
+        env.set("TFELHOME", self.prefix)
 
     def check(self):
         """Skip the target 'test' which doesn't build all test programs used by tests"""
